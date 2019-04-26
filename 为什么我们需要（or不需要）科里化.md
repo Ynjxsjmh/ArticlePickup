@@ -118,7 +118,7 @@ v = sum [1, 2, 3]
 
 
 函数这种外星生物在 QP 语言里长这样（下面是四个这类生物的标本）：
-```python
+```haskell
 \x -> x + 1
 \(x, y) -> x + y
 \f -> f 1
@@ -129,12 +129,12 @@ v = sum [1, 2, 3]
 
 当函数被允许返回另一个函数后，QP 语言里就会发生一些更有意思的事情了。比如，你可以这样来重新定义 plus 了：
 
-```python
+```haskell
 plus = \x -> (\y -> x + y)
 ```
 
 然后你可以这样用这个 plus 函数：
-```python
+```haskell
 r = (plus 1) 2
 ```
 
@@ -149,20 +149,20 @@ r = (plus 1) 2
 科里化这种现象是随着函数被当做一等公民自然而然地产生的，原本与我们需要或不需要无关。但既然这样的自然现象存在了，那么我们当然可以考虑一下这现象有什么可以利用的地方。
 
 先来举个栗子，比如我们现在需要一个 all 函数，这个函数用来判断一个列表里的所有元素，是否都满足某一给定条件。它应该是接受一个 judge 函数和一个列表，然后返回一个 bool 值。我们当然可以这样来定义它：
-```python
+```haskell
 all = \(judge, xs) -> if xs == [] then true else ((judge (head xs)) and all (judge, (tail xs)))
 flag = all ((\x -> x > 0), [1, 2, 3])
 ```
 
 但是，如果现在的情况是，我需要判断一系列的列表分别是否 “合法”（即列表的每个元素都使 judge 返回 True），那么我得这样写：
-```python
+```haskell
 flag1 = all ((\x -> x > 0), [1, 2, 3])
 flag2 = all ((\x -> x > 0), [4, 5])
 flag3 = all ((\x -> x > 0), [6, 7, 8, 9])
 ```
 
 当然，把 judge 函数写这么多遍太二了，所以大家一般会写成这样：
-```python
+```haskell
 judge = (\x -> x > 0)
 flag1 = all (judge, [1, 2, 3])
 flag2 = all (judge, [4, 5])
@@ -170,7 +170,7 @@ flag3 = all (judge, [6, 7, 8, 9])
 ```
 
 事实上，你会发现以上的代码仍然有 all (judge, XXX) 这样的公共模式，于是聪明的你当然会这样写：
-```python
+```haskell
 judge = (\x -> x > 0)
 judge_list = (\xs -> all (judge, xs))
 flag1 = judge_list [1, 2, 3]
@@ -179,7 +179,7 @@ flag3 = judge_list [6, 7, 8, 9]
 ```
 
 甚至，聪明的你连 judge_list 这个名字也不想重复这么多遍
-```python
+```haskell
 judge = (\x -> x > 0)
 judge_list = (\xs -> all (judge, xs))
 [flag1, flag2, flag3] = (map judge_list) [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
@@ -188,13 +188,13 @@ judge_list = (\xs -> all (judge, xs))
 这里，从发现 all (judge, XXX) 这样的公共模式，到 judge_list 这个函数，我们所做的事情是 “抽象”，即把一个以 XXX 为模板变量的公共模式，抽象成一个以 x 为自变量的函数。我们发现，通过合适的抽象，我们总是能得到我们想要的东西。不过，有没有更方便一点点的方式呢？
 
 如果我们考虑通过 “科里化” 的方式来处理 all 函数的两个参数，那么 all 的定义就是这样：
-```python
+```haskell
 all = \judge -> (\xs -> ...)
 flag = (all (\x -> x > 0)) [1, 2, 3]
 ```
 
 这样一来，当我们需要 judge_list 函数的时候，我们可以通过 “函数应用” 来得到，而不再需要做 “抽象” 了：
-```python
+```haskell
 judge_list = all (\x -> x > 0)
 [flag1, flag2, flag3] = (map judge_list) [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
 ```
@@ -213,13 +213,13 @@ judge_list = all (\x -> x > 0)
 
 然而，在 “方便一点点” 之余，科里化的风格的大量应用还会带来一些别的副作用，让我们对比一下用元组参数风格和科里化参数风格定义的两个 all 函数在实际使用的时候会让你的代码变成什么样子：
 
-```python
+```haskell
 judge = (\x -> x > 0)
 judge_list = (\xs -> all (judge, xs))
 [flag1, flag2, flag3] = (map judge_list) [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
 ```
 
-```python
+```haskell
 [flag1, flag2, flag3] = (map (all (\x -> x > 0))) [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
 ```
 
@@ -246,13 +246,13 @@ judge_list = (\xs -> all (judge, xs))
 在支持多参函数语法的语言里，把它定义成 “接受一个组合型参数的函数” 或是定义成 “多参函数” 通常仅仅是出于美观和习惯上的考虑。虽然我个人是更倾向于用组合型参数的方式的，但是很多时候这么做并不符合该语言的用户习惯，而有些语言甚至就没有提供方便的组合数据的方式。
 
 但是，是否要使用科里化的方式，却是一件需要细细揣摩的事情。比如，我要定义一个 rotate 函数，它接受一个二维向量的坐标，返回一个逆时针旋转九十度后的向量坐标，那么你可能会把它定义成
-```python
+```haskell
 rotate = (\x -> (\y -> (y, -x)))
 ```
 
 或者
 
-```python
+```haskell
 rotate = (\(x, y) -> (y, -x))
 ```
 
