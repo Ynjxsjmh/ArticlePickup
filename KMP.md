@@ -7,7 +7,7 @@
 ---
 KMP 算法的核心，是一个被称为部分匹配表 (Partial Match Table) 的数组。我觉得理解 KMP 的最大障碍就是很多人在看了很多关于 KMP 的文章之后，仍然搞不懂 PMT 中的值代表了什么意思。这里我们抛开所有的枝枝蔓蔓，先来解释一下这个数据到底是什么。对于字符串 “abababca"，它的 PMT 如下表所示：
 
-![6ec073952822c0c290ab38b85aee77fa.png](en-resource://database/3688:1)
+![6ec073952822c0c290ab38b85aee77fa.png](./img/KMP01.png)
 
 就像例子中所示的，如果待匹配的模式字符串有 8 个字符，那么 PMT 就会有 8 个值。
 
@@ -34,7 +34,7 @@ KMP 算法的核心，是一个被称为部分匹配表 (Partial Match Table) �
 
 这样一来，我们就可以将这些字符段的比较省略掉。具体的做法是，保持 i 指针不动，然后将 j 指针指向模式字符串的第 PMT[j −1]-1 位即可。
 
-![2eca70f7a0435fe68e321b29dfdf9f10.png](en-resource://database/3690:1)
+![2eca70f7a0435fe68e321b29dfdf9f10.png](./img/KMP02.png)
 
 简言之，以图中的例子来说，在 i 处失配，那么主字符串和模式字符串的前边 6 位就是相同的。又因为模式字符串的前 6 位，它的前 4 位前缀和后 4 位后缀是相同的，所以我们推知主字符串 i 之前的 4 位和模式字符串开头的 4 位是相同的。就是图中的灰色部分。那这部分就不用再比较了。
 
@@ -43,7 +43,7 @@ KMP 算法的核心，是一个被称为部分匹配表 (Partial Match Table) �
 
 下面给出根据 next 数组进行字符串匹配加速的字符串匹配程序。其中要注意的一个技巧是，在把 PMT 进行向右偏移时，第 0 位的值，我们将其设成了-1，这只是为了编程的方便，并没有其他的意义。在本节的例子中，next 数组如下表所示。
 
-![10431083516ce1a3987254faf8df80bc.png](en-resource://database/3694:1)
+![10431083516ce1a3987254faf8df80bc.png](./img/KMP03.png)
 
 具体的程序如下所示：
 ```c
@@ -79,15 +79,15 @@ int KMP(char * t, char * p)
 
 具体来说，就是从模式字符串的第一位 (注意，不包括第 0 位) 开始对自身进行匹配运算。 在任一位置，能匹配的最长长度就是当前位置的 next 值。如下图所示。
 
-![82e3097d17c860da98365c07cb0fb7d7.png](en-resource://database/3696:1)
+![82e3097d17c860da98365c07cb0fb7d7.png](./img/KMP04.png)
 
-![c78b5c2b370e6c9113791f8bf49c7a14.png](en-resource://database/3698:1)
+![c78b5c2b370e6c9113791f8bf49c7a14.png](./img/KMP05.png)
 
-![3b1fdfa1e00548a9a1dda88358e900fa.png](en-resource://database/3700:1)
+![3b1fdfa1e00548a9a1dda88358e900fa.png](./img/KMP06.png)
 
-![24bd07241ddaba8f260d5686858a0f5e.png](en-resource://database/3702:1)
+![24bd07241ddaba8f260d5686858a0f5e.png](./img/KMP07.png)
 
-![3d6815a184808d5bd2f53b5ccf111716.png](en-resource://database/3704:1)
+![3d6815a184808d5bd2f53b5ccf111716.png](./img/KMP08.png)
 
 求 next 数组值的程序如下所示：
 
