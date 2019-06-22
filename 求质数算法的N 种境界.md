@@ -1,4 +1,4 @@
-作者：编程随想
+作者：[编程随想](https://program-think.blogspot.com)
 
 链接：https://program-think.blogspot.com/2011/12/prime-algorithm-1.html
 
