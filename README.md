@@ -10,5 +10,6 @@
 - [x] [原码、反码、补码的产生、应用以及优缺点有哪些？ - 斯卡诺的回答](https://www.zhihu.com/question/20159860/answer/328778746)
 - [x] [二分查找有几种写法？它们的区别是什么？ - Jason Li 的回答](https://www.zhihu.com/question/36132386/answer/530313852)
 - [x] [Unicode 和 UTF-8 有什么区别？ - 盛世唐朝的回答 - 知乎](https://www.zhihu.com/question/23374078/answer/69732605)
+- [x] [信息熵是什么？ - 知乎用户的回答 - 知乎](https://www.zhihu.com/question/22178202/answer/49929786)
 
 repo 内知乎的回答，有可能的话，也可以去看看其他人的。
