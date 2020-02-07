@@ -1,0 +1,90 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Outlines  2 0 R
+/Pages  3 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Outlines
+/Count 0
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Pages
+/Kids  [ 4 0 R ]
+/Count 1
+>>
+endobj
+
+4 0 obj
+<<
+/Type /Page
+/Parent  3 0 R
+/MediaBox  [ 0  0 612 792 ]
+/Contents  5 0 R
+/Resources
+/ProcSet 6 0 R
+>>
+endobj
+
+5 0 obj
+<<
+/Length  883
+>>
+stream
+% 绘制一个黑色的线段，使用默认的线宽
+150  250 m
+150  350 l
+S
+
+% 绘制有厚度的虚线线段。
+4 w % 设置线宽为 4 个单位
+[ 4 6 ]  0 d % 设为虚线样式，以 4 个单位连续， 6 个单位断开
+150  250 m
+400  250 l
+S
+[ ]  0 d % 复位虚线图案为实线
+1 w % 复位线宽度为 1 个单位
+
+% 绘制了 1 个单位红色边框的矩形，填充淡蓝色。
+1.0 0.0 0.0 RG % 为红色描边颜色
+0.5 0.75  1.0 rg % 淡蓝色的填充
+200 300  50  75  re
+B
+
+% 绘制曲线灰色填充和彩色边框。
+0.5 0.1 0.2 RG
+0.7 g
+300 300  m
+300 400  400 400 400 300 c b
+endstream
+endobj
+
+6  0 obj
+[/PDF]
+endobj
+
+xref
+0  7
+0000000000  65535 f
+0000000009  00000 n
+0000000074  00000 n
+0000000120  00000 n
+0000000179  00000 n
+0000000300  00000 n
+0000001532  00000 n
+
+trailer
+<<
+/Size  7
+/Root  1 0 R
+>>
+startxref
+1556
+%%EOF
