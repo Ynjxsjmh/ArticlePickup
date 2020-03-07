@@ -1,5 +1,5 @@
 # About
-收集我觉得十分不错的文章，侵删。
+收集备份我觉得十分不错的文章，侵删。我打算自 2020-03-07 后不再人工转 md, adoc 了（浪费时间），改用 [Archiveror](https://github.com/rahiel/archiveror) 备份 + HTML 备份，然后本项目就直接在 README 给出链接。
 
 # TODO
 - [x] [技术人员的发展之路](https://coolshell.cn/articles/17583.html)
@@ -13,3 +13,5 @@
 - [x] [信息熵是什么？ - 知乎用户的回答 - 知乎](https://www.zhihu.com/question/22178202/answer/49929786)
 
 repo 内知乎的回答，有可能的话，也可以去看看其他人的。
+
+
