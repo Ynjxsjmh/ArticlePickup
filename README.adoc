@@ -1,0 +1,97 @@
+= 拾遗
+Ynjxsjmh <https://github.com/Ynjxsjmh[@Ynjxsjmh]>
+:toc: macro
+:toclevels: 4
+:sectanchors:
+:sectlinks:
+:sectnums:
+:experimental:
+:stem: latexmath
+:imagesdir: images
+:includedir: includes
+
+
+本项目用来收集备份我觉得十分不错的文章，侵删。我打算自 2020-03-07 后不再人工转 md, adoc 了（浪费时间），改用 https://github.com/rahiel/archiveror[Archiveror] 备份 + HTML 备份，然后本项目就直接在 README 给出链接。
+
+我考虑以 https://github.com/programthink/books[programthink/books] 类似的表格来进行文章管理，由于此项目旨在收集 IT 相关的文章，所以目录很大程度上会参考编程随想的 book 项目。
+
+为什么会选择 AsciiDoc 格式？
+
+. 由于本项目涉及表格，AsciiDoc 对表格的支持比 Markdown，Org 格式完善。
+. AsciiDoc 导出 HTML 时可以自动生成目录，方便阅读。
+
+toc::[]
+
+
+[%autowidth.stretch, options="header"]
+|===
+| 中文标题 | 英文标题 | 作者 | 文章来源及链接 | 添加日期	
+
+| N/A
+| The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)
+| JOEL SPOLSKY
+| https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/[joelonsoftware.com]
+| 2020-03-07
+
+| 编程入门指南 v1.5
+| N/A
+| 萧井陌, Badger
+| https://zhuanlan.zhihu.com/p/19959253[知乎专栏]
+| 2020-03-07
+
+
+| 原码、反码、补码的产生、应用以及优缺点有哪些？
+| N/A
+| 斯卡诺
+| https://www.zhihu.com/question/20159860/answer/328778746[知乎回答]
+| N/A
+
+| 二分查找有几种写法？它们的区别是什么？
+| N/A
+| Jason Li
+| https://www.zhihu.com/question/36132386/answer/530313852[知乎回答]
+| N/A
+
+| Unicode 和 UTF-8 有什么区别？
+| N/A
+| 盛世唐朝
+| https://www.zhihu.com/question/23374078/answer/69732605[知乎回答]
+| N/A
+
+| 信息熵是什么？
+| N/A
+| 知乎用户
+| https://www.zhihu.com/question/22178202/answer/49929786[知乎回答]
+| N/A
+
+| 我人生的前 28 年
+| My life before 28 years
+| ManateeLazyCat
+| https://manateelazycat.github.io/life/2016/03/03/my-life-before-28-years.html[manateelazycat.github.io]
+| N/A
+
+| 技术人员的发展之路
+| N/A	
+| 陈皓
+| https://coolshell.cn/articles/17583.html[酷壳]
+| N/A
+
+| 程序员技术练级攻略
+| N/A
+| 陈皓
+| https://coolshell.cn/articles/4990.html[酷壳]
+| N/A
+
+| 程序员需要具备的基本技能
+| N/A
+| 陈皓
+| https://coolshell.cn/articles/428.html[酷壳]
+| N/A
+
+| 谈谈我的“三观”
+| N/A
+| 陈皓
+| https://coolshell.cn/articles/19085.html[酷壳]
+| N/A
+
+|===
