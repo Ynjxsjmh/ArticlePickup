@@ -33,6 +33,12 @@ toc::[]
 | https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/[joelonsoftware.com]
 | 2020-03-07
 
+| N/A
+| every programmer should know
+| mtdvio
+| https://github.com/mtdvio/every-programmer-should-know[Github]
+| 2020-03-07
+
 | 编程入门指南 v1.5
 | N/A
 | 萧井陌, Badger
