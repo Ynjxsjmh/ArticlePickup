@@ -27,6 +27,12 @@ toc::[]
 |===
 | 中文标题 | 英文标题 | 作者 | 文章来源及链接 | 添加日期	
 
+| 为什么我们的教育培育不出性感的公民？
+| N/A
+| OkButSoWhat
+| https://www.youtube.com/watch?v=LvAK84AQPew[YouTube]
+| 2020-03-11
+
 | N/A
 | The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)
 | JOEL SPOLSKY
@@ -99,5 +105,12 @@ toc::[]
 | 陈皓
 | https://coolshell.cn/articles/19085.html[酷壳]
 | N/A
+
+| 程序员必读书单 1.0
+| N/A
+| lucida
+| http://lucida.me/blog/developer-reading-list/[lucida.me]
+| N/A
+
 
 |===
