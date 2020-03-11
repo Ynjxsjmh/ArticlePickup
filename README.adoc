@@ -51,6 +51,17 @@ toc::[]
 | https://zhuanlan.zhihu.com/p/19959253[知乎专栏]
 | 2020-03-07
 
+| 随记：我们需要怎样的数学教育？
+| N/A
+| Matrix67
+| http://www.matrix67.com/blog/archives/4294[matrix67.com]
+| 2020-03-12
+
+| 理解矩阵
+| N/A
+| 孟岩
+| https://blog.csdn.net/myan/article/details/647511[CSDN]
+| 2020-03-12
 
 | 原码、反码、补码的产生、应用以及优缺点有哪些？
 | N/A
