@@ -40,6 +40,12 @@ toc::[]
 | 2020-03-07
 
 | N/A
+| What every programmer should know about memory
+| Ulrich Drepper
+| https://lwn.net/Articles/250967/[LWN.net] / https://people.freebsd.org/~lstewart/articles/cpumemory.pdf[freebsd.org]
+| 2020-05-14
+
+| N/A
 | every programmer should know
 | mtdvio
 | https://github.com/mtdvio/every-programmer-should-know[Github]
@@ -74,6 +80,25 @@ toc::[]
 | Jason Li
 | https://www.zhihu.com/question/36132386/answer/530313852[知乎回答]
 | N/A
+
+| 为什么你写不好一个快速排序? 谈程序员的职业发展
+| N/A
+| sunchangming
+| http://blog.sunchangming.com/post/47626775433[A programmer's life]
+| 2020-05-12
+
+| 我眼中的技术高手
+| N/A
+| lifesinger
+| https://github.com/lifesinger/blog/issues/126[github.com/lifesinger]
+| 2020-05-12
+
+| 善良比聪明重要
+| N/A
+| lifesinger
+| https://github.com/lifesinger/blog/issues/126[github.com/lifesinger]
+| 2020-05-12
+
 
 | Unicode 和 UTF-8 有什么区别？
 | N/A
